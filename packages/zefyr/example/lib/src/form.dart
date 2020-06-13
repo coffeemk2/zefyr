@@ -57,7 +57,7 @@ class _FormEmbeddedScreenState extends State<FormEmbeddedScreen> {
     return ZefyrTheme(
       data: theme,
       child: ZefyrField(
-        height: 200.0,
+        height: 900.0,
         decoration: InputDecoration(labelText: 'Description'),
         controller: _controller,
         focusNode: _focusNode,

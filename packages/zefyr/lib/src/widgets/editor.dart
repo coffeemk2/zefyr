@@ -27,6 +27,7 @@ class ZefyrEditor extends StatefulWidget {
     this.imageDelegate,
     this.selectionControls,
     this.physics,
+    this.headers,
   })  : assert(mode != null),
         assert(controller != null),
         assert(focusNode != null),
@@ -68,6 +69,8 @@ class ZefyrEditor extends StatefulWidget {
 
   /// Padding around editable area.
   final EdgeInsets padding;
+
+  final List<Widget> headers;
 
   @override
   _ZefyrEditorState createState() => _ZefyrEditorState();
@@ -187,6 +190,7 @@ class _ZefyrEditorState extends State<ZefyrEditor> {
       mode: widget.mode,
       padding: widget.padding,
       physics: widget.physics,
+      headers: widget.headers,
     );
 
     return ZefyrTheme(

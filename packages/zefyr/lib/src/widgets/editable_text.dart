@@ -40,6 +40,7 @@ class ZefyrEditableText extends StatefulWidget {
     this.mode: ZefyrMode.edit,
     this.padding: const EdgeInsets.symmetric(horizontal: 16.0),
     this.physics,
+    this.headers,
   })  : assert(mode != null),
         assert(controller != null),
         assert(focusNode != null),
@@ -74,6 +75,8 @@ class ZefyrEditableText extends StatefulWidget {
 
   /// Padding around editable area.
   final EdgeInsets padding;
+
+  final List<Widget> headers;
 
   @override
   _ZefyrEditableTextState createState() => _ZefyrEditableTextState();
@@ -218,7 +221,7 @@ class _ZefyrEditableTextState extends State<ZefyrEditableText>
   bool _didAutoFocus = false;
 
   List<Widget> _buildChildren(BuildContext context) {
-    final result = <Widget>[];
+    final result = widget.headers ?? <Widget>[];
     for (var node in document.root.children) {
       result.add(_defaultChildBuilder(context, node));
     }
